@@ -1,0 +1,10 @@
+#!/bin/bash
+
+action=$(echo  "kill WM\nshutdown\nreboot" | dmenu -i -p "action: ")
+
+case $action in
+    "kill WM") pgrep dwm | xargs kill ;;
+    "shutdown") shutdown now ;;
+    "reboot") reboot now ;;
+    *) ;;
+esac
